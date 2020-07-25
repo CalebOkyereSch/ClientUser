@@ -21,17 +21,17 @@ function Item(props) {
           </h4>
           <div className={styles.itemEquip}>
             <div className={styles.info}>
-              <i class="fas fa-bed"></i>
+              <i className="fas fa-bed"></i>
               <span>{props.bedrooms}</span>
               <p>Bedrooms</p>
             </div>
             <div className={styles.info}>
-              <i class="fas fa-bath"></i>
+              <i className="fas fa-bath"></i>
               <span>{props.bathrooms}</span>
               <p>Bathrooms</p>
             </div>
             <div className={styles.info}>
-              <i class="fas fa-door-open"></i>
+              <i className="fas fa-door-open"></i>
               <span>{props.doors}</span>
               <p> Rooms</p>
             </div>

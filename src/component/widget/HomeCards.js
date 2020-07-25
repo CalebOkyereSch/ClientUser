@@ -13,7 +13,7 @@ function HomeCards() {
             </p>
           </div>
           <div className="card-footer">
-            <Link to="#" className="btn btn-primary">
+            <Link to="/about" className="btn btn-primary">
               Learn More
             </Link>
           </div>
@@ -31,7 +31,7 @@ function HomeCards() {
             </p>
           </div>
           <div className="card-footer">
-            <Link to="#" className="btn btn-primary">
+            <Link to="/about" className="btn btn-primary">
               Learn More
             </Link>
           </div>
@@ -47,7 +47,7 @@ function HomeCards() {
             </p>
           </div>
           <div className="card-footer">
-            <Link to="#" className="btn btn-primary">
+            <Link to="/about" className="btn btn-primary">
               Learn More
             </Link>
           </div>

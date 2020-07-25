@@ -23,7 +23,7 @@ export default function (state = initialState, action) {
     case BUY_ITEM:
       return {
         ...state,
-        message: action.payload,
+        cart: action.payload,
         loading: false,
       };
     case CLEAR_CART:

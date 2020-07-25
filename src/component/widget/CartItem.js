@@ -40,10 +40,10 @@ const CartItem = (props) => {
           <Link
             to="#"
             className="btn btn-lg btn-primary "
-            // onClick={() => {
-            //   props.buyItem(props.id);
-            //   window.alert("Your interest has been made known to the manager");
-            // }}
+            onClick={() => {
+              props.buyItem(props.id);
+              window.alert("Your interest has been made known to the manager");
+            }}
           >
             Buy Property
           </Link>

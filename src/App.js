@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import MyContext from "./component/HOC/myContext";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import jwt_decode from "jwt-decode";
@@ -14,11 +13,10 @@ import Landing from "./component/layout/Landing";
 import Login from "./screens/login/Login";
 import Home from "./screens/home/Home";
 import ItemView from "./screens/itemView/itemView";
-import Admi from "./screens/admi/otherAdmi/Admi";
 import Product from "./screens/products/products";
 import Cart from "./screens/cartView/Cart";
-import Dashboard from "./screens/admi/dashboard/Dashboard";
 import PrivateRoute from "./component/widget/PrivateRoute";
+import About from "./screens/about/about";
 
 // Check for token
 if (localStorage.jwtToken) {
@@ -44,32 +42,28 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <MyContext>
-          <Router>
-            <div className="App">
-              <Route exact path="/" component={Landing} />
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/item" component={ItemView} />
-              <Route exact path="/admi/dashboard" component={Dashboard} />
-              <Route exact path="/products" component={Product} />
-              {/* <Route exact path="/signin" component={Login} /> */}
-              <Route exact path="/admi/signin" component={Admi} />
-              <Switch>
-                <PrivateRoute exact path="/cart" component={Cart} />
-              </Switch>
-              <Route
-                exact
-                path="/signin"
-                render={(props) => <Login {...props} change="signin" />}
-              />
-              <Route
-                exact
-                path="/signup"
-                render={(props) => <Login {...props} change="signup" />}
-              />
-            </div>
-          </Router>
-        </MyContext>
+        <Router>
+          <div className="App">
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/item" component={ItemView} />
+            <Route exact path="/products" component={Product} />
+            <Switch>
+              <PrivateRoute exact path="/cart" component={Cart} />
+            </Switch>
+            <Route
+              exact
+              path="/signin"
+              render={(props) => <Login {...props} change="signin" />}
+            />
+            <Route
+              exact
+              path="/signup"
+              render={(props) => <Login {...props} change="signup" />}
+            />
+          </div>
+        </Router>
       </Provider>
     );
   }

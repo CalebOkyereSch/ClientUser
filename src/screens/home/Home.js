@@ -34,7 +34,7 @@ class Home extends Component {
               aliquid similique quaerat nam nobis illo aspernatur vitae fugiat
               numquam repellat.
             </p>
-            <Link to="#" className="btn btn-primary btn-lg">
+            <Link to="/about" className="btn btn-primary btn-lg">
               Get To Know Us
             </Link>
           </header>
@@ -51,33 +51,31 @@ class Home extends Component {
             </li>
           </ul>
           <div className="row text-center">
-            {product === loading || product === null ? (
-              <div style={{ margin: "auto" }}>
-                <Spinner />
-              </div>
+            {product === loading ? (
+              <Spinner />
+            ) : product === null || {} || [] ? (
+              <h1>No Product Found</h1>
             ) : (
               product.map((item, index) => {
-                console.log(item);
-                if (index < 6) {
-                  return (
-                    <Item
-                      key={index}
-                      picture={item.main}
-                      bedrooms={item.bed}
-                      bathrooms={item.bath}
-                      location={item.location}
-                      doors={item.rooms}
-                      price={item.price}
-                    />
-                  );
-                }
+                return (
+                  <Item
+                    key={index}
+                    picture={item.main}
+                    bedrooms={item.bed}
+                    bathrooms={item.bath}
+                    location={item.location}
+                    doors={item.rooms}
+                    price={item.price}
+                    id={item._id}
+                  />
+                );
               })
             )}
           </div>
           <Link
             to="/products"
             type="button"
-            class="btn btn-primary btn-lg btn-block"
+            className="btn btn-primary btn-lg btn-block"
           >
             View More Properties
           </Link>

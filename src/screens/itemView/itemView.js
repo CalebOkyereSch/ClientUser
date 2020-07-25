@@ -18,7 +18,7 @@ class ItemView extends Component {
 
   render() {
     const { item, loading } = this.props.item;
-    const { user } = this.props.auth;
+    const { isAuthenticated, user } = this.props.auth;
     let itemContent;
     if (item === loading) {
       itemContent = (
@@ -52,12 +52,16 @@ class ItemView extends Component {
                   >
                     Product Description
                   </Link>
-                  <button
-                    className=" btn btn-lg btn-primary"
-                    onClick={() => this.props.addToCart(item._id, user)}
-                  >
-                    Add To Cart &#43;
-                  </button>
+                  {isAuthenticated ? (
+                    <button
+                      className=" btn btn-lg btn-primary"
+                      onClick={() => this.props.addToCart(item._id, user)}
+                    >
+                      Add To Cart &#43;
+                    </button>
+                  ) : (
+                    <div />
+                  )}
                 </div>
               </div>
 

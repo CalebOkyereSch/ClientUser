@@ -209,7 +209,6 @@ class Login extends Component {
                   className="ghost btn btn-dark btn-lg text-sm text-lg"
                   id="signIn"
                   to="/signin"
-                  // onClick={() => setTurn(this.props.change)}
                 >
                   Sign In
                 </Link>
@@ -223,7 +222,6 @@ class Login extends Component {
                   className="ghost btn btn-dark btn-lg"
                   id="signUp"
                   to="/signup"
-                  // onClick={() => setTurn(this.props.change)}
                 >
                   Sign Up
                 </Link>

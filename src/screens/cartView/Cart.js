@@ -6,17 +6,11 @@ import { getUserCart, deleteCartItem } from "../../actions/cartActions";
 import { connect } from "react-redux";
 import Spinner from "../../component/widget/Spinner";
 import PropTypes from "prop-types";
-import { DataContext } from "../../component/HOC/myContext";
+
 class Cart extends Component {
   componentDidMount() {
     this.props.getUserCart();
   }
-
-  // componentWillReceiveProps(prevProps) {
-  //   if (this.props.cart !== prevProps.props.cart) {
-  //     this.props.getUserCart();
-  //   }
-  // }
 
   render() {
     const { cart, loading } = this.props.cart;

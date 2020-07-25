@@ -27,10 +27,10 @@ class Product extends Component {
                 <Link to="#" className="list-group-item">
                   Buy
                 </Link>
-                <Link href="#" className="list-group-item">
+                <Link to="#" className="list-group-item">
                   Rent
                 </Link>
-                <Link href="#" className="list-group-item">
+                <Link to="#" className="list-group-item">
                   Lands
                 </Link>
               </div>
@@ -41,7 +41,7 @@ class Product extends Component {
               <div className="row">
                 {product === loading ? (
                   <Spinner />
-                ) : product === null ? (
+                ) : product === null || [] || {} ? (
                   <h1>No Product Found</h1>
                 ) : (
                   product.map((item, index) => {

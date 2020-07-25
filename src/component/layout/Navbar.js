@@ -15,7 +15,7 @@ class Navbar extends Component {
   render() {
     const { isAuthenticated, user } = this.props.auth;
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary mb-4 site-header sticky-top py-1">
         <div className="container">
           <img src="../images/logo.ico" width="30" height="30" alt="logo" />
           <Link
@@ -55,7 +55,7 @@ class Navbar extends Component {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link h5" to="#">
+                <Link className="nav-link h5" to="/about">
                   {" "}
                   About Us
                 </Link>
@@ -64,7 +64,7 @@ class Navbar extends Component {
 
             <ul className="navbar-nav ml-auto">
               {isAuthenticated ? (
-                <a className="nav-link h5" href="">
+                <Link className="nav-link h5" to="#">
                   <img
                     className="rounded-circle"
                     src={user.avatar}
@@ -73,7 +73,7 @@ class Navbar extends Component {
                     alt="logo"
                     title="You must have a Gravatar attached to your email to display image"
                   />
-                </a>
+                </Link>
               ) : (
                 <Link className="nav-link h5" to="/signup">
                   Sign Up
@@ -81,13 +81,13 @@ class Navbar extends Component {
               )}
               <li className="nav-item">
                 {isAuthenticated ? (
-                  <a
+                  <Link
                     className="nav-link h5"
-                    href=""
+                    to="#"
                     onClick={this.onLogoutClick.bind(this)}
                   >
                     Logout
-                  </a>
+                  </Link>
                 ) : (
                   <Link className="nav-link h5" to="/signin">
                     Login

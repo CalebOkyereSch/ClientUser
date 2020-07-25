@@ -42,7 +42,7 @@ export const loginUser = (userData) => (dispatch) => {
     .catch((err) =>
       dispatch({
         type: GET_ERRORS,
-        payload: err.data,
+        payload: err.response.data,
       })
     );
 };
