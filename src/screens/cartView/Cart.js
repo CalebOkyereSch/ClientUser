@@ -15,20 +15,17 @@ class Cart extends Component {
   render() {
     const { cart, loading } = this.props.cart;
 
-    if (cart === loading || cart === null) {
-      return (
-        <div>
-          <Navbar />
-          <Spinner />
-          <Footer />
-        </div>
-      );
-    } else {
-      return (
-        <div className="container-fluid">
-          <Navbar />
-          <div className="container">
-            {cart.map((item, index) => {
+    return (
+      <div className="container-fluid">
+        <Navbar />
+
+        <div className="container" style={{ textAlign: "center" }}>
+          {cart === loading ? (
+            <Spinner />
+          ) : cart === null || {} || [] ? (
+            <h3 className="form-text text-muted">Empty Cart</h3>
+          ) : (
+            cart.map((item, index) => {
               return (
                 <CartItem
                   key={index}
@@ -38,12 +35,12 @@ class Cart extends Component {
                   description={item.description}
                 />
               );
-            })}
-          </div>
-          <Footer />
+            })
+          )}
         </div>
-      );
-    }
+        <Footer />
+      </div>
+    );
   }
 }
 

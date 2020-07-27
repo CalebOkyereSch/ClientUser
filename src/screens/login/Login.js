@@ -80,7 +80,7 @@ class Login extends Component {
           <div className={styles.signUpContainer}>
             <form noValidate onSubmit={this.onRegisterSubmit}>
               <h1>Register</h1>
-              <div className={styles.socialContainer}>
+              {/* <div className={styles.socialContainer}>
                 <Link to="#" className={styles.social}>
                   <i className="fab fa-facebook-f"></i>
                 </Link>
@@ -90,8 +90,11 @@ class Login extends Component {
                 <Link to="#" className={styles.social}>
                   <i className="fab fa-linkedin-in"></i>
                 </Link>
-              </div>
-              <span> or use your email for registration</span>
+              </div> */}
+              <small className="form-text text-muted">
+                {" "}
+                use your email for registration
+              </small>
               <input
                 type="text"
                 className={classnames({
@@ -154,7 +157,7 @@ class Login extends Component {
           <div className={styles.signInContainer}>
             <form noValidate onSubmit={this.onLoginSubmit}>
               <h1>Sign in</h1>
-              <div className={styles.socialContainer}>
+              {/* <div className={styles.socialContainer}>
                 <Link to="#" className={styles.social}>
                   <i className="fab fa-facebook-f"></i>
                 </Link>
@@ -164,8 +167,11 @@ class Login extends Component {
                 <Link to="#" className={styles.social}>
                   <i className="fab fa-linkedin-in"></i>
                 </Link>
-              </div>
-              <span> or use your account</span>
+              </div> */}
+              <small className="form-text text-muted">
+                {" "}
+                use your email account
+              </small>
               <input
                 type="email"
                 placeholder="Email"
@@ -203,12 +209,13 @@ class Login extends Component {
               <div className={styles.overlayLeft}>
                 <h1>Welcome Back!</h1>
                 <p>
-                  To keep connected with us pleae login with your personal info
+                  To keep connected with us please login with your personal info
                 </p>
                 <Link
                   className="ghost btn btn-dark btn-lg text-sm text-lg"
                   id="signIn"
                   to="/signin"
+                  style={{ borderRadius: "100px" }}
                 >
                   Sign In
                 </Link>
@@ -222,6 +229,7 @@ class Login extends Component {
                   className="ghost btn btn-dark btn-lg"
                   id="signUp"
                   to="/signup"
+                  style={{ borderRadius: "100px" }}
                 >
                   Sign Up
                 </Link>

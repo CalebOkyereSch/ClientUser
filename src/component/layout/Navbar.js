@@ -23,7 +23,7 @@ class Navbar extends Component {
             to="/home"
             style={{ float: "left" }}
           >
-            Hemight Properties And Construction
+            Hemight Properties
           </Link>
           <button
             className="navbar-toggler"
@@ -33,63 +33,61 @@ class Navbar extends Component {
           >
             <span className="navbar-toggler-icon" />
           </button>
+          <input
+            className="form-control form-control-dark "
+            type="text"
+            placeholder="Search Property In Location "
+            aria-label="Search"
+          />
 
           <div className="collapse navbar-collapse" id="mobile-nav">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link className="nav-link h5" to="/products">
-                  {" "}
-                  Buy
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link h5" to="/products">
-                  {" "}
-                  Rent
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link h5" to="/products">
+                <Link className="nav-link h6" to="/products">
                   {" "}
                   Products
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link h5" to="/about">
+                <Link className="nav-link h6" to="/about">
                   {" "}
-                  About Us
+                  About
                 </Link>
               </li>
             </ul>
 
             <ul className="navbar-nav ml-auto">
               {isAuthenticated ? (
-                <Link className="nav-link h5" to="#">
-                  <img
-                    className="rounded-circle"
-                    src={user.avatar}
-                    width="30"
-                    height="30"
-                    alt="logo"
-                    title="You must have a Gravatar attached to your email to display image"
-                  />
-                </Link>
+                <li className="nav-item">
+                  <Link className="nav-link h6" to="#">
+                    <img
+                      className="rounded-circle"
+                      src={user.avatar}
+                      width="20"
+                      height="20"
+                      alt="dp"
+                      title="You must have a Gravatar attached to your email to display image"
+                    />
+                  </Link>
+                </li>
               ) : (
-                <Link className="nav-link h5" to="/signup">
-                  Sign Up
-                </Link>
+                <li className="nav-item">
+                  <Link className="nav-link h6" to="/signup">
+                    Register
+                  </Link>
+                </li>
               )}
               <li className="nav-item">
                 {isAuthenticated ? (
                   <Link
-                    className="nav-link h5"
+                    className="nav-link h6"
                     to="#"
                     onClick={this.onLogoutClick.bind(this)}
                   >
                     Logout
                   </Link>
                 ) : (
-                  <Link className="nav-link h5" to="/signin">
+                  <Link className="nav-link h6" to="/signin">
                     Login
                   </Link>
                 )}
@@ -97,7 +95,7 @@ class Navbar extends Component {
               <li className="nav-item">
                 {isAuthenticated ? (
                   <Link
-                    className="nav-link h5"
+                    className="nav-link h6"
                     to="/cart"
                     style={{
                       display: "flex",
@@ -110,8 +108,8 @@ class Navbar extends Component {
                     Cart
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
+                      width="20"
+                      height="20"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"

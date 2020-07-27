@@ -9,6 +9,7 @@ import { getItem } from "../../actions/itemActions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Spinner from "../../component/widget/Spinner";
+import PropertySearch from "../../component/widget/PropertySearch";
 class Product extends Component {
   componentDidMount() {
     this.props.getProduct();
@@ -24,15 +25,7 @@ class Product extends Component {
             <div className="col-lg-3">
               <h1 className="my-4">Our Properties </h1>
               <div className="list-group">
-                <Link to="#" className="list-group-item">
-                  Buy
-                </Link>
-                <Link to="#" className="list-group-item">
-                  Rent
-                </Link>
-                <Link to="#" className="list-group-item">
-                  Lands
-                </Link>
+                <PropertySearch />
               </div>
             </div>
 

@@ -20,7 +20,7 @@ const Carousel = () => {
         <div className="carousel-item active">
           <img
             className="d-block img-fluid"
-            src={`../images/7.jpg`}
+            src={`../images/2.jpg`}
             alt="First slide"
             style={{
               backgroundSize: "cover !important",
@@ -34,7 +34,7 @@ const Carousel = () => {
         <div className="carousel-item">
           <img
             className="d-block img-fluid"
-            src={`../images/3.jpg`}
+            src={`../images/9.jpg`}
             alt="Second slide"
             style={{
               backgroundSize: "cover !important",
@@ -48,7 +48,7 @@ const Carousel = () => {
         <div className="carousel-item">
           <img
             className="d-block img-fluid"
-            src={`../images/2.jpg`}
+            src={`../images/11.jpg`}
             alt="Third slide"
             style={{
               backgroundSize: "cover !important",

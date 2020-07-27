@@ -6,6 +6,7 @@ import { getProduct } from "../../actions/productActions";
 import { getItem } from "../../actions/itemActions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import Scroller from "../../component/widget/Scroller";
 import Navbar from "../../component/layout/Navbar";
 import Footer from "../../component/layout/Footer";
 import Spinner from "../../component/widget/Spinner";
@@ -22,19 +23,17 @@ class Home extends Component {
           <header
             className="jumbotron my-4"
             style={{
-              backgroundColor: "rgb(15, 46, 64,0.7)",
+              backgroundColor: "rgb(70, 122, 97,0.6)",
             }}
           >
             <h1 className="display-3" style={{ color: "#fff" }}>
               A Warm Welcome!
             </h1>
             <p className="lead" style={{ color: "#fff" }}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa,
-              ipsam, eligendi, in quo sunt possimus non incidunt odit vero
-              aliquid similique quaerat nam nobis illo aspernatur vitae fugiat
-              numquam repellat.
+              <h4>To The Property Marketplace</h4>
+              Changing the way you find property by providing more choice
             </p>
-            <Link to="/about" className="btn btn-primary btn-lg">
+            <Link to="/about" className="btn btn-info btn-lg">
               Get To Know Us
             </Link>
           </header>
@@ -50,35 +49,39 @@ class Home extends Component {
               </Link>
             </li>
           </ul>
-          <div className="row text-center">
-            {product === loading ? (
-              <Spinner />
-            ) : product === null || {} || [] ? (
-              <h1>No Product Found</h1>
-            ) : (
-              product.map((item, index) => {
-                return (
-                  <Item
-                    key={index}
-                    picture={item.main}
-                    bedrooms={item.bed}
-                    bathrooms={item.bath}
-                    location={item.location}
-                    doors={item.rooms}
-                    price={item.price}
-                    id={item._id}
-                  />
-                );
-              })
-            )}
+          <div>
+            <Scroller>
+              {product === loading ? (
+                <Spinner />
+              ) : product === null || {} || [] ? (
+                <h3>No Properties Found</h3>
+              ) : (
+                product.map((item, index) => {
+                  if (index < 6) {
+                    return (
+                      <Item
+                        key={index}
+                        picture={item.main}
+                        bedrooms={item.bed}
+                        bathrooms={item.bath}
+                        location={item.location}
+                        doors={item.rooms}
+                        price={item.price}
+                        id={item._id}
+                      />
+                    );
+                  }
+                })
+              )}
+            </Scroller>
+            <Link
+              className="btn btn-lg btn-primary w-100"
+              to="/products"
+              style={{ fontSize: 15, fontWeight: "bolder" }}
+            >
+              View More Properties
+            </Link>
           </div>
-          <Link
-            to="/products"
-            type="button"
-            className="btn btn-primary btn-lg btn-block"
-          >
-            View More Properties
-          </Link>
         </div>
         <Footer />
       </div>

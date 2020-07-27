@@ -8,8 +8,9 @@ function HomeCards() {
           <h4 className="card-header">Who We Are </h4>
           <div className="card-body">
             <p className="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-              esse necessitatibus neque.
+              We are an affordable consumer-friendly website which gives you
+              everything you need to take control of selling or renting your
+              property.
             </p>
           </div>
           <div className="card-footer">
@@ -24,10 +25,11 @@ function HomeCards() {
           <h4 className="card-header">What We Do</h4>
           <div className="card-body">
             <p className="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Reiciendis ipsam eos, nam perspiciatis natus commodi similique
-              totam consectetur praesentium molestiae atque exercitationem ut
-              consequuntur, sed eveniet, magni nostrum sint fuga.
+              We help you save money selling or letting property, whether you’re
+              an estate agent, landlord or homeowner, we have a range of
+              services tailored to your needs. We advertise all our properties
+              on a network of prominent websites, putting your listings in front
+              of tens of thousands of buyers and tenants every day.
             </p>
           </div>
           <div className="card-footer">
@@ -42,8 +44,11 @@ function HomeCards() {
           <h4 className="card-header">Why Work with Us</h4>
           <div className="card-body">
             <p className="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-              esse necessitatibus neque.
+              We also offer a range of services to take care of all our
+              landlords needs. From tenant referencing services to ensure you
+              find the best possible tenants, to customisable tenancy
+              agreements, landlord insurance products, debt recovery assistance
+              and much more.
             </p>
           </div>
           <div className="card-footer">
