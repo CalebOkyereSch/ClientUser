@@ -45,13 +45,13 @@ class ItemView extends Component {
               <div className="col-lg-3">
                 <h1 className="my-4">Available &#9733; </h1>
                 <div className="list-group">
-                  <Link
-                    to="#"
+                  <a
+                    href="#description"
                     className=" btn btn-lg btn-primary"
                     onClick={() => this.setState({ show: !this.state.show })}
                   >
                     Product Description
-                  </Link>
+                  </a>
                   {isAuthenticated ? (
                     <button
                       className=" btn btn-lg btn-primary"
@@ -106,7 +106,10 @@ class ItemView extends Component {
                   </div>
                 </div>
 
-                <div className="card card-outline-secondary my-4">
+                <div
+                  className="card card-outline-secondary my-4"
+                  id="description"
+                >
                   <div className="card-header ">
                     {" "}
                     <p

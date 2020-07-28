@@ -34,7 +34,7 @@ class Product extends Component {
               <div className="row">
                 {product === loading ? (
                   <Spinner />
-                ) : product === null || [] || {} ? (
+                ) : product === null ? (
                   <h1>No Product Found</h1>
                 ) : (
                   product.map((item, index) => {

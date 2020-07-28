@@ -53,8 +53,8 @@ class Home extends Component {
             <Scroller>
               {product === loading ? (
                 <Spinner />
-              ) : product === null || {} || [] ? (
-                <h3>No Properties Found</h3>
+              ) : product === null ? (
+                <h3>No Properties Found {console.log(product)}</h3>
               ) : (
                 product.map((item, index) => {
                   if (index < 6) {

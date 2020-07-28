@@ -80,17 +80,7 @@ class Login extends Component {
           <div className={styles.signUpContainer}>
             <form noValidate onSubmit={this.onRegisterSubmit}>
               <h1>Register</h1>
-              {/* <div className={styles.socialContainer}>
-                <Link to="#" className={styles.social}>
-                  <i className="fab fa-facebook-f"></i>
-                </Link>
-                <Link to="#" className={styles.social}>
-                  <i className="fab fa-google-plus-g"></i>
-                </Link>
-                <Link to="#" className={styles.social}>
-                  <i className="fab fa-linkedin-in"></i>
-                </Link>
-              </div> */}
+
               <small className="form-text text-muted">
                 {" "}
                 use your email for registration
@@ -157,17 +147,6 @@ class Login extends Component {
           <div className={styles.signInContainer}>
             <form noValidate onSubmit={this.onLoginSubmit}>
               <h1>Sign in</h1>
-              {/* <div className={styles.socialContainer}>
-                <Link to="#" className={styles.social}>
-                  <i className="fab fa-facebook-f"></i>
-                </Link>
-                <Link to="#" className={styles.social}>
-                  <i className="fab fa-google-plus-g"></i>
-                </Link>
-                <Link to="#" className={styles.social}>
-                  <i className="fab fa-linkedin-in"></i>
-                </Link>
-              </div> */}
               <small className="form-text text-muted">
                 {" "}
                 use your email account

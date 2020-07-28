@@ -23,6 +23,7 @@ export const loginUser = (userData) => (dispatch) => {
     .post("/api/users/signin", userData)
     .then((res) => {
       // Save to localStorage
+
       const { token } = res.data;
       // set token to header
       // Set token to local storage(only store string)
