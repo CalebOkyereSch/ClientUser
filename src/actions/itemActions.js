@@ -30,15 +30,16 @@ export const setItemLoading = () => {
   };
 };
 
-export const addToCart = (item, user) => (dispatch) => {
+export const addToCart = (item, user, history) => (dispatch) => {
   axios
     .post(`/api/products/${item}`, user)
-    .then((res) =>
+    .then((res) => {
       dispatch({
         type: SET_CURRENT_USER,
         payload: res.data,
-      })
-    )
+      });
+      history.push("/cart");
+    })
     .catch((err) =>
       dispatch({
         type: GET_ERRORS,

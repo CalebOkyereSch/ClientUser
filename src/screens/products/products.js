@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Item from "../../component/widget/Item";
 import Carousel from "../../component/widget/Carousel";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Navbar from "../../component/layout/Navbar";
 import Footer from "../../component/layout/Footer";
 import { getProduct } from "../../actions/productActions";

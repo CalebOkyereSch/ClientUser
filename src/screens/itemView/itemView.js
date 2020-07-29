@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import styles from "./styles.css";
 import Navbar from "../../component/layout/Navbar";
 import Footer from "../../component/layout/Footer";
@@ -55,7 +55,9 @@ class ItemView extends Component {
                   {isAuthenticated ? (
                     <button
                       className=" btn btn-lg btn-primary"
-                      onClick={() => this.props.addToCart(item._id, user)}
+                      onClick={() =>
+                        this.props.addToCart(item._id, user, this.props.history)
+                      }
                     >
                       Add To Cart &#43;
                     </button>
@@ -173,4 +175,4 @@ const mapStateToProp = (state) => {
   };
 };
 
-export default connect(mapStateToProp, { addToCart })(ItemView);
+export default connect(mapStateToProp, { addToCart })(withRouter(ItemView));

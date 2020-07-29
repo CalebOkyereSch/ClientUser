@@ -22,7 +22,7 @@ class Cart extends Component {
         <div className="container" style={{ textAlign: "center" }}>
           {cart === loading ? (
             <Spinner />
-          ) : cart === null || {} || [] ? (
+          ) : cart === null ? (
             <h3 className="form-text text-muted">Empty Cart</h3>
           ) : (
             cart.map((item, index) => {
