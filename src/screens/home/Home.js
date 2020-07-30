@@ -29,10 +29,10 @@ class Home extends Component {
             <h1 className="display-3" style={{ color: "#fff" }}>
               A Warm Welcome!
             </h1>
-            <p className="lead" style={{ color: "#fff" }}>
+            <div className="lead" style={{ color: "#fff" }}>
               <h4>To The Property Marketplace</h4>
               Changing the way you find property by providing more choice
-            </p>
+            </div>
             <Link to="/about" className="btn btn-info btn-lg">
               Get To Know Us
             </Link>
@@ -54,23 +54,23 @@ class Home extends Component {
               {product === loading ? (
                 <Spinner />
               ) : product === null ? (
-                <h3>No Properties Found {console.log(product)}</h3>
+                <h3>No Properties Found </h3>
               ) : (
                 product.map((item, index) => {
-                  if (index < 6) {
-                    return (
-                      <Item
-                        key={index}
-                        picture={item.main}
-                        bedrooms={item.bed}
-                        bathrooms={item.bath}
-                        location={item.location}
-                        doors={item.rooms}
-                        price={item.price}
-                        id={item._id}
-                      />
-                    );
-                  }
+                  return index < 6 ? (
+                    <Item
+                      key={index}
+                      picture={item.main}
+                      bedrooms={item.bed}
+                      bathrooms={item.bath}
+                      location={item.location}
+                      doors={item.rooms}
+                      price={item.price}
+                      id={item._id}
+                    />
+                  ) : (
+                    ""
+                  );
                 })
               )}
             </Scroller>

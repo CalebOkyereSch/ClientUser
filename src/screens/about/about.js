@@ -20,61 +20,61 @@ const About = () => {
             delighted to bring our experience to bear in making your purchase or
             rental experience a satisfying and fulfilling one.
           </p>
-          <a className="btn btn-outline-secondary" href="#contact">
+          <Link className="btn btn-outline-secondary" to="#contact">
             Contacts
-          </a>
+          </Link>
         </div>
         <div className="product-device box-shadow d-none d-md-block"></div>
         <div className="product-device product-device-2 box-shadow d-none d-md-block"></div>
       </div>
 
       {/*  */}
-      <div class="container pt-4 pb-4 text-center" id="contact">
-        <h2 class="text-center mb-4">Contacts</h2>
+      <div className="container pt-4 pb-4 text-center" id="contact">
+        <h2 className="text-center mb-4">Contacts</h2>
 
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="feature-item animated fadeInUp delay-3">
-              <i class="fas fa-4x fa-map-marker-alt mt-4 mb-4 text-muted "></i>
+        <div className="row">
+          <div className="col-xs-12 col-sm-6 col-md-4">
+            <div className="feature-item animated fadeInUp delay-3">
+              <i className="fas fa-4x fa-map-marker-alt mt-4 mb-4 text-muted "></i>
               <h4>Location</h4>
 
-              <a href="#" style={{ display: "block" }}>
+              <Link to="#" style={{ display: "block" }}>
                 <i className="fas fa-thumbtack"></i> Madina <br />
                 <small className="text-muted">Oppsite Overhead</small>
-              </a>
+              </Link>
             </div>
           </div>
 
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="feature-item animated fadeInUp delay-3">
-              <i class="fa fa-4x fa-mobile mt-4 mb-4 text-muted"></i>
+          <div className="col-xs-12 col-sm-6 col-md-4">
+            <div className="feature-item animated fadeInUp delay-3">
+              <i className="fa fa-4x fa-mobile mt-4 mb-4 text-muted"></i>
               <h4>Telephone</h4>
 
-              <a href="#" style={{ display: "block" }}>
-                <i class="fas fa-phone-volume"></i> +(233)567423295
-              </a>
-              <a href="#" style={{ display: "block" }}>
-                <i class="fas fa-phone-volume"></i> +(233)267423295
-              </a>
+              <Link to="#" style={{ display: "block" }}>
+                <i className="fas fa-phone-volume"></i> +(233)567423295
+              </Link>
+              <Link to="#" style={{ display: "block" }}>
+                <i className="fas fa-phone-volume"></i> +(233)267423295
+              </Link>
             </div>
           </div>
-          <div class="clearfix visible-sm"></div>
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="feature-item animated fadeInUp delay-3">
-              <i class="fas fa-4x fa-thumbs-up  mt-4 mb-4 text-muted"></i>
+          <div className="clearfix visible-sm"></div>
+          <div className="col-xs-12 col-sm-6 col-md-4">
+            <div className="feature-item animated fadeInUp delay-3">
+              <i className="fas fa-4x fa-thumbs-up  mt-4 mb-4 text-muted"></i>
               <h4>Socials</h4>
-              <a href="#" style={{ display: "block" }}>
-                <i class="fas fa-envelope"></i> hemightproperty@gmail.com
-              </a>
-              <a href="#" style={{ display: "block" }}>
-                <i class="fab fa-twitter"></i> @HemightProperties
-              </a>
-              <a href="#" style={{ display: "block" }}>
-                <i class="fab fa-facebook"></i> @HemightProperties
-              </a>
-              <a href="#" style={{ display: "block" }}>
-                <i class="fab fa-instagram"></i> @HemightProperties
-              </a>
+              <Link to="#" style={{ display: "block" }}>
+                <i className="fas fa-envelope"></i> hemightproperty@gmail.com
+              </Link>
+              <Link to="#" style={{ display: "block" }}>
+                <i className="fab fa-twitter"></i> @HemightProperties
+              </Link>
+              <Link to="#" style={{ display: "block" }}>
+                <i className="fab fa-facebook"></i> @HemightProperties
+              </Link>
+              <Link to="#" style={{ display: "block" }}>
+                <i className="fab fa-instagram"></i> @HemightProperties
+              </Link>
             </div>
           </div>
         </div>

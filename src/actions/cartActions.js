@@ -62,7 +62,7 @@ export const deleteCartItem = (id) => (dispatch) => {
 
 export const buyItem = (id) => (dispatch) => {
   axios
-    .get(`/api/users/cart/item/${id}`)
+    .post(`/api/users/cart/item/${id}`)
     .then((res) => {
       dispatch({
         type: BUY_ITEM,

@@ -93,10 +93,10 @@ export default class PropertySearch extends Component {
           </select>
           <button
             type="submit"
-            class="btn btn-primary btn-sm"
+            className="btn btn-primary btn-sm"
             style={{ marginTop: "10px" }}
           >
-            <i class="fa fa-search"></i> Search
+            <i className="fa fa-search"></i> Search
           </button>
         </form>
       </div>

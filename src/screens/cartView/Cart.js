@@ -26,14 +26,17 @@ class Cart extends Component {
             <h3 className="form-text text-muted">Empty Cart</h3>
           ) : (
             cart.map((item, index) => {
-              return (
+              return item !== null ? (
                 <CartItem
+                  id={item._id}
                   key={index}
                   picture={item.main}
                   location={item.location}
                   price={item.price}
                   description={item.description}
                 />
+              ) : (
+                ""
               );
             })
           )}

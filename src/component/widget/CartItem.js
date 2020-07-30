@@ -42,7 +42,8 @@ const CartItem = (props) => {
             className="btn btn-lg btn-primary "
             onClick={() => {
               props.buyItem(props.id);
-              window.alert("Your interest has been made known to the manager");
+              window.alert("Interest Sent");
+              window.location.reload(false);
             }}
           >
             Buy Property
@@ -52,7 +53,7 @@ const CartItem = (props) => {
             className="btn btn-lg btn-primary"
             onClick={() => {
               props.deleteCartItem(props.id);
-              window.alert("Refresh Page After Deleting From Cart");
+              window.location.reload(false);
             }}
           >
             Remove Item
