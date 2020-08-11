@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Spinner from "../../component/widget/Spinner";
 import { addToCart } from "../../actions/itemActions";
+import isEmpty from "../../isEmpty";
 
 class ItemView extends Component {
   constructor() {
@@ -28,7 +29,7 @@ class ItemView extends Component {
           <Footer />
         </div>
       );
-    } else if (item === null) {
+    } else if (isEmpty(item)) {
       itemContent = (
         <div>
           <Navbar />

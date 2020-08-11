@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { clearUserCart } from "../../actions/cartActions";
-import { searchLocation } from "../../actions/productActions";
+import { searchLocation } from "../../actions/searchActions";
 
 class Navbar extends Component {
   constructor() {
@@ -14,17 +14,21 @@ class Navbar extends Component {
     };
   }
   onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+    e.preventDefault();
+    this.setState({ location: e.target.value });
   }
+
   onLogoutClick(e) {
     e.preventDefault();
     this.props.clearUserCart();
     this.props.logoutUser();
   }
 
-  onSubmit(e) {
-    e.preventDefault();
-    searchLocation(this.state.location);
+  onSubmit() {
+    let loc = {
+      location: this.state.location,
+    };
+    this.props.searchLocation(loc);
   }
   render() {
     const { isAuthenticated, user } = this.props.auth;
@@ -49,23 +53,29 @@ class Navbar extends Component {
           </button>
 
           <div className="row justify-content-center container-fluid">
-            <form onSubmit={this.onSubmit}>
+            <form>
               <div className=" row no-gutters align-items-center">
                 <div className="col">
                   <input
                     className="form-control  form-control-sm "
                     type="search"
+                    name="location"
                     value={this.state.location}
-                    onChange={this.onChange}
+                    onChange={this.onChange.bind(this)}
                     placeholder="Search Properties In Location"
                     style={{ width: "300px" }}
                   />
                 </div>
 
                 <div className="col-auto">
-                  <button className="btn btn-sm btn-dark " type="submit">
+                  <Link
+                    to="/search"
+                    className="btn btn-sm"
+                    style={{ background: "#03cafc", color: "#fff" }}
+                    onClick={this.onSubmit.bind(this)}
+                  >
                     Search
-                  </button>
+                  </Link>
                 </div>
               </div>
             </form>
@@ -169,6 +179,8 @@ class Navbar extends Component {
 Navbar.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
+  searchLocation: PropTypes.func.isRequired,
+  clearUserCart: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
   auth: state.auth,

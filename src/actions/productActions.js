@@ -21,18 +21,18 @@ export const getProduct = () => (dispatch) => {
     );
 };
 
-export const searchLocation = (location) => (dispatch) => {
-  dispatch(setProductLoading());
-  axios
-    .post("/api/products/search-location", location)
-    .then((res) =>
-      dispatch({
-        type: GET_PRODUCT,
-        payload: res.data,
-      })
-    )
-    .catch((err) => dispatch({ type: GET_PRODUCT, payload: {} }));
-};
+// export const searchLocation = (location) => (dispatch) => {
+//   dispatch(setProductLoading());
+//   axios
+//     .post("/api/products/search-location", location)
+//     .then((res) =>
+//       dispatch({
+//         type: GET_PRODUCT,
+//         payload: res.data,
+//       })
+//     )
+//     .catch((err) => dispatch({ type: GET_PRODUCT, payload: {} }));
+// };
 // Cart Loading
 
 export const setProductLoading = () => {

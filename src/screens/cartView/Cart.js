@@ -6,6 +6,7 @@ import { getUserCart, deleteCartItem } from "../../actions/cartActions";
 import { connect } from "react-redux";
 import Spinner from "../../component/widget/Spinner";
 import PropTypes from "prop-types";
+import isEmpty from "../../isEmpty";
 
 class Cart extends Component {
   componentDidMount() {
@@ -22,7 +23,7 @@ class Cart extends Component {
         <div className="container" style={{ textAlign: "center" }}>
           {cart === loading ? (
             <Spinner />
-          ) : cart === null ? (
+          ) : isEmpty(cart) ? (
             <h3 className="form-text text-muted">Empty Cart</h3>
           ) : (
             cart.map((item, index) => {

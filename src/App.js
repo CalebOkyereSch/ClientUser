@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, createContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import jwt_decode from "jwt-decode";
@@ -17,6 +17,7 @@ import Product from "./screens/products/products";
 import Cart from "./screens/cartView/Cart";
 import PrivateRoute from "./component/widget/PrivateRoute";
 import About from "./screens/about/about";
+import Search from "./screens/searchView/Search";
 
 // Check for token
 if (localStorage.jwtToken) {
@@ -38,6 +39,10 @@ if (localStorage.jwtToken) {
   }
 }
 
+// Context Information
+
+const MyContext = createContext();
+
 class App extends Component {
   render() {
     return (
@@ -49,6 +54,7 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/item" component={ItemView} />
             <Route exact path="/products" component={Product} />
+            <Route exact path="/search" component={Search} />
             <Switch>
               <PrivateRoute exact path="/cart" component={Cart} />
             </Switch>

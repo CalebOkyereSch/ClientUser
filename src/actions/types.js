@@ -11,3 +11,6 @@ export const ITEM_LOADING = "ITEM_LOADING";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const BUY_ITEM = "BUY_ITEM";
+export const SEARCH_ITEM = "SEARCH_ITEM";
+export const SEARCH_LOADING = "SEARCH_LOADING";
+export const GET_SEARCH = "GET_SEARCH";
